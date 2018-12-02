@@ -1,0 +1,91 @@
+﻿@using Apiary_Assistant.Models;
+@using Apiary_Assistant.Services;
+@model List<Hive>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hello World!</h2>
+
+<ul>
+    @foreach (var reminder in ReminderService.GetReminders())
+    {
+        <li>@reminder</li>
+    }
+</ul>
+
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <td>Hive ID</td>
+            <td>Creation Date</td>
+            <td>Location</td>
+            <td>Start Type</td>
+            @*<td>Starter Queen</td>
+                <td>Queen Age</td>
+                <td>House Type</td>
+                <td>Total Deep Frames</td>
+                <td>Total Med Frames</td>
+                <td>Total Short Frames</td>
+                <td>Drawn Deep</td>
+                <td>Drawn Med</td>
+                <td>Drawn Short</td>
+                <td>Frames Deep Brood</td>
+                <td>Med Brood</td>
+                <td>Short Brood</td>
+                <td>Is There Honey</td>
+                <td>Is There Feed</td>
+                <td>Food Type</td>
+                <td>Food Lbs</td>
+                <td>Hive Address</td>
+                <td>Hive Position</td>
+                <td>Property Owner</td>
+                <td>Second Property Owner</td>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Hive hive in Model)
+        {
+            <tr>
+                <td>@hive.HiveId</td>
+                <td>@hive.CreationDate</td>
+                <td>@hive.OriginLocation</td>
+                <td>@hive.OriginType</td>
+                @*
+                        <td>@hive.StartQueen</td>
+                    <td>@hive.QueenAge</td>
+                    <td>@hive.HouseType</td>
+                    <td>@hive.TotalDeepFrames</td>
+                    <td>@hive.TotalMedFrames</td>
+                    <td>@hive.TotalShortFrames</td>
+                    <td>@hive.DrawnDeeps</td>
+                    <td>@hive.DrawnMeds</td>
+                    <td>@hive.DrawnShort</td>
+                    <td>@hive.DeepBrood</td>
+                    <td>@hive.MedBrood</td>
+                    <td>@hive.ShortBrood</td>
+                    <td>@hive.IsThereHoney</td>
+                    <td>@hive.IsThereFeed</td>
+                    <td>@hive.FoodType</td>
+                    <td>@hive.LbsOfFood</td>
+                    <td>@hive.HiveAddress</td>
+                    <td>@hive.HivePosition</td>
+                    <td>@hive.PropertyOwner</td>
+                    <td>@hive.SecondPropOwner</td>
+                *@
+            </tr>
+
+
+        }
+
+
+
+
+    </tbody>
+
+</table>
